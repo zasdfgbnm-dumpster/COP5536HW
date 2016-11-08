@@ -4,7 +4,6 @@
 #include <fstream>
 #include <functional>
 #include <map>
-#include <regex>
 #include <cctype>
 #include <algorithm>
 
@@ -17,9 +16,11 @@ map<string,fh_t::node> m;
 ofstream out("output_file.txt");
 
 // test if a string is an integer
-// code modified from stackoverflow: http://stackoverflow.com/questions/4654636/how-to-determine-if-a-string-is-a-number-with-c
 inline bool is_integer(const string & s) {
-	return regex_match(s,regex("[0-9]+"));
+	for(char i:s)
+		if(i<'0'||i>'9')
+			return false;
+	return true;
 }
 
 // handle the case when it is #tag n
