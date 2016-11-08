@@ -1,5 +1,5 @@
 hashtagcounter:hashtagcounter.cpp fibonacci.hpp
-	g++ hashtagcounter.cpp -O2 -o hashtagcounter
+	g++ -std=c++11 hashtagcounter.cpp -O2 -o hashtagcounter
 
 
 .PHONY: updatehpp
